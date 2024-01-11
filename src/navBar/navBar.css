@@ -2,11 +2,20 @@
     background-color: red;
     height: 10vh;
     min-height: 50px;
-    width: 100vw;
+    width: 100%;
     margin: auto;
+    display: flex;
+    flex: 1 100px 160px;
 }
 
 .logo{
     margin: auto;
+    display: block;
+    margin-right: 50%;
+}
+
+.addButton{
+    margin-right: auto;
+    margin-left: 1vw;
     display: block;
 }

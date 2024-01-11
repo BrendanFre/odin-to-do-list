@@ -1,7 +1,7 @@
 import './item.css'
 import { createTask, showList, toDoArray } from './item-logic.js'
 
-export default function itemCard(parent){
+export default function itemCard(parent, list){
     const dialogBox = document.createElement('dialog')
     const subjectName = document.createElement('input')
     const notesBox = document.createElement('textarea')
@@ -9,11 +9,11 @@ export default function itemCard(parent){
 
     postButton.textContent = "Add ToDO List"
     postButton.addEventListener('click',()=>{
-        const newTask = createTask("hello", "trees", "01/2/32")
+        const newTask = createTask(subjectName.value, notesBox.value, "01/2/32")
         toDoArray.push(newTask)
-        console.log(newTask)
-        console.log(toDoArray)
-        showList(parent)
+        // console.log(newTask)
+        // console.log(toDoArray)
+        showList(list)
         dialogBox.remove()
 
     })
@@ -31,10 +31,4 @@ export default function itemCard(parent){
     dialogBox.appendChild(postButton)
     parent.appendChild(dialogBox)
     dialogBox.showModal()
-}
-
-function addANote(subject, notes) {
-    console.log('button clickedS')
-    createItem(subject, notes, "01/01/2023")
-    
 }

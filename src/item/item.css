@@ -29,10 +29,16 @@
 }
 
 .newItemBox>button{
-    width: 99%;
+    width: 95%;
     height: 20px;
     border: none;
     background-color: aliceblue;
+}
+
+/* Task List */
+.taskList{
+    height: 80vh;
+    width: 80%;
 }
 
 /* Task Card */
