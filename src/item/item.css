@@ -1,3 +1,10 @@
+/* New Item Dialog Box */
+
 .newItemBox{
     width: 50%;
+    border: none;
+}
+
+.newItemBox>input[type=text]{
+    border: none;
 }
