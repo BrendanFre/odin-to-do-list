@@ -2,9 +2,43 @@
 
 .newItemBox{
     width: 50%;
+    height: 60vh;
     border: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .newItemBox>input[type=text]{
     border: none;
+}
+
+.newItemBox>input[type=text]:focus{
+    border: none;
+    outline: none;
+}
+
+.newItemBox>textarea{
+    border: none;
+    height: 90vh;
+}
+
+.newItemBox>textarea:focus{
+    border: none;
+    outline: none;
+}
+
+.newItemBox>button{
+    width: 99%;
+    height: 20px;
+    border: none;
+    background-color: aliceblue;
+}
+
+/* Task Card */
+.taskCard{
+    Width: 20%;
+    height: 32%;
+    background-color: gray;
+    padding: 2vh 2vw;
 }

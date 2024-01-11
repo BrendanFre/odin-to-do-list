@@ -1,11 +1,10 @@
+const todoArray = []
 
-export default function createItem(title, comment, date){
 
-    ToDo(title, comment, date)
-
+export function createTask(subject, notes, deadLine){
+return createItem(subject, notes, "01/11/23")
 }
-
-const ToDo = function(subject, notes, deadLine){
+const createItem = function(subject, notes, deadLine){
     let status = "Not Started"
 
     let itemSubject = subject
@@ -18,5 +17,20 @@ const ToDo = function(subject, notes, deadLine){
     const archiveStatus = () => status = "Archive"
     const deleteStatus = () => status = "deleted"
 
-    return {getStatus, actionStatus, completedStatus, archiveStatus, deleteStatus, itemSubject, itemNotes, itemDeadline}
+    return {todoArray, getStatus, actionStatus, completedStatus, archiveStatus, deleteStatus, itemSubject, itemNotes, itemDeadline}
+}
+
+export const toDoArray = []
+
+export function showList(parent){
+    const noteList = document.createElement('div')
+    noteList.classList.add('taskList')
+    
+ const visualList = toDoArray.map((task)=>{
+    const nextNote = document.createElement('div')
+    nextNote.classList.add('taskCard')
+    noteList.append(nextNote)
+ })
+ console.log(`This is the visual list${visualList}`)
+ parent.appendChild(noteList)
 }
