@@ -14,5 +14,6 @@ function header(logo){
         theLogo.src = logo
         theLogo.width = 50
         theLogo.height = 50
+        theLogo.classList.add('logo')
     return theLogo
 }

@@ -1,5 +1,12 @@
 .theBar{
     background-color: red;
-    height: 100px;
+    height: 10vh;
+    min-height: 50px;
     width: 100vw;
+    margin: auto;
+}
+
+.logo{
+    margin: auto;
+    display: block;
 }
