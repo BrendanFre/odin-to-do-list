@@ -1,7 +1,7 @@
 import './navBar.css'
 import myLogo from './Logo.png'
 import addImage from './plus.png'
-import itemCard from '../item/item-ux'
+import {itemCard} from '../item/item-ux'
 
 export default function navBar(parent){
     const theBar = document.createElement('div')
@@ -29,11 +29,11 @@ function header(logo){
 
 function addNote(parent){
     const addButton = new Image()
-    const list = document.querySelector('listBody')
+    const taskList = document.querySelector('.listBody')
+    console.log(document.querySelector('.listBody'))
 
     addButton.src = addImage
     addButton.classList.add('addButton')
-    addButton.addEventListener('click', itemCard(parent, list))
-
+    addButton.addEventListener('click', ()=>{console.log(taskList);  itemCard(parent, taskList)})
     return addButton
 }

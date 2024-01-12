@@ -37,16 +37,29 @@
 
 /* Task List */
 .taskList{
-    height: 80vh;
-    width: 80%;
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 /* Task Card */
 .taskCard{
     Width: 20%;
     height: 32%;
-    background-color: gray;
+    background-color: #e2e8f0;
     padding: 2vh 2vw;
     border-radius: 10px;
     margin: 5px;
+}
+
+.listBody{
+    width: 80vw;
+    height: 70%;
+}
+
+.deleteButton{
+    background-color: rgba(0 0 0 0);
+    border: none;
 }
