@@ -1,6 +1,7 @@
 import './item.css'
 import { createTask, toDoArray } from './item-logic.js'
 
+
 export function itemCard(parent){
     const dialogBox = document.createElement('dialog')
     const subjectName = document.createElement('input')

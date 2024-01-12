@@ -1,4 +1,4 @@
-export function convertTodoString(task, notes, deadline){
+export function addToStorage(id, task, notes, deadline){
     const newItem = {
         taskName: task,
         taskNotes: notes,
@@ -6,5 +6,6 @@ export function convertTodoString(task, notes, deadline){
     }
     const localStorage = window["localStorage"]
 
-    localStorage.setItem(task, JSON.stringify(newItem) )
+    localStorage.setItem(id, JSON.stringify(newItem) )
+    console.log(JSON.parse(localStorage[id]))
 }

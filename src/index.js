@@ -7,13 +7,6 @@ import {checkStorage, returnItem, returnStorage} from './localStorage/checkStora
 import { convertTodoString } from './localStorage/updateStorage'
 
 
-if(checkStorage("localStorage")){
-    returnStorage()
-    convertTodoString("Play games", "all the games must be played", "If we don't we fail")
-    returnItem("Play games")
-}
-
-
 const content = document.querySelector('#content')
 const theList = document.createElement('div')
 
