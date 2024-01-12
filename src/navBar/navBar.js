@@ -1,6 +1,6 @@
 import './navBar.css'
 import myLogo from './Logo.png'
-import addImage from './plus.png'
+import addImage from './plus-square.svg'
 import {itemCard} from '../item/item-ux'
 
 export default function navBar(parent){
@@ -33,6 +33,8 @@ function addNote(parent){
     console.log(document.querySelector('.listBody'))
 
     addButton.src = addImage
+    addButton.width = 33
+    addButton.height = 33
     addButton.classList.add('addButton')
     addButton.addEventListener('click', ()=>{console.log(taskList);  itemCard(parent, taskList)})
     return addButton
