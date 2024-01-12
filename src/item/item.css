@@ -47,4 +47,6 @@
     height: 32%;
     background-color: gray;
     padding: 2vh 2vw;
+    border-radius: 10px;
+    margin: 5px;
 }
