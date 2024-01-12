@@ -3,6 +3,15 @@ import './style.css'
 import { itemCard, showList} from './item/item-ux'
 import { toDoArray } from './item/item-logic'
 import theFooter from './footer/footer'
+import {checkStorage, returnItem, returnStorage} from './localStorage/checkStorage'
+import { convertTodoString } from './localStorage/updateStorage'
+
+
+if(checkStorage("localStorage")){
+    returnStorage()
+    convertTodoString("Play games", "all the games must be played", "If we don't we fail")
+    returnItem("Play games")
+}
 
 
 const content = document.querySelector('#content')
