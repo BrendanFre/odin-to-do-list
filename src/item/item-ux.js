@@ -1,5 +1,8 @@
 import './item.css'
 import { createTask, toDoArray } from './item-logic.js'
+import { returnList, storage } from '../localStorage/checkStorage.js'
+import itemToHTML from './itemToHTML.js'
+import { deleteStorageItem } from '../localStorage/updateStorage.js'
 
 
 export function itemCard(parent){
@@ -8,6 +11,7 @@ export function itemCard(parent){
     const notesBox = document.createElement('textarea')
     const deadlinePicker = document.createElement('input')
     const postButton = document.createElement('button')
+    const listBody = document.querySelector('listBody')
 
     postButton.textContent = "Add ToDO List"
     postButton.addEventListener('click',()=>{
@@ -15,7 +19,7 @@ export function itemCard(parent){
         toDoArray.push(newTask)
         // console.log(newTask
         const theList = document.querySelector('.listBody')
-        showList(theList)
+        storageShow(theList)
         dialogBox.remove()
 
     })
@@ -39,34 +43,12 @@ export function itemCard(parent){
     dialogBox.showModal()
 }
 
-export function showList(parent){
+
+export function storageShow(parent){
     while(parent.firstChild){
         parent.removeChild(parent.firstChild)
     }
-    const noteList = document.createElement('div')
-    noteList.classList.add('taskList')
+    const newList = returnList()
+    itemToHTML(newList, parent)
     
- const visualList = toDoArray.map((task)=>{
-    const nextNote = document.createElement('div')
-    const noteTitle = document.createElement('div')
-    const noteContent = document.createElement('div')
-    const noteDate = document.createElement('div')
-    const deleteButton = document.createElement('input')
-    nextNote.classList.add('taskCard')
-    noteTitle.textContent = `${task.itemSubject}`
-    noteContent.textContent = `${task.itemNotes}`
-    noteDate.textContent = task.itemDeadline
-
-    deleteButton.type= "button"
-    deleteButton.classList.add('deleteButton')
-    deleteButton.textContent = "x"
-    deleteButton.value = "x"
-
-    nextNote.appendChild(noteTitle)
-    nextNote.appendChild(noteContent)
-    nextNote.appendChild(noteDate)
-    nextNote.appendChild(deleteButton)
-    noteList.append(nextNote)
- })
- parent.appendChild(noteList)
-}
+    }

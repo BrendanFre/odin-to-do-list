@@ -1,4 +1,4 @@
-let storage
+export let storage
 storage = window["localStorage"]
 
 export function checkStorage(type) {
@@ -18,7 +18,8 @@ export function checkStorage(type) {
           // everything except Firefox
           e.name === "QuotaExceededError" ||
           // Firefox
-          e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+          e.name === "NS_ERROR_DOM_QUOTA_REACHED")
+          &&
         // acknowledge QuotaExceededError only if there's something already stored
         storage &&
         storage.length !== 0
@@ -33,3 +34,20 @@ export function checkStorage(type) {
   export function returnItem(task){
     console.log(JSON.parse(storage[task]))
   }
+
+  export function returnList(){
+    const items = {...localStorage };
+  const newList = [];
+  Object.keys(items).forEach((key) => {
+    if (key >= 0) {
+      Object.values(items).forEach((val) => {
+        try {
+          const task = JSON.parse(val);
+          newList.push(task);
+          // console.log(newList)
+        } catch { console.log('Ignore'); }
+      });
+    }
+  });
+  return newList;
+}
