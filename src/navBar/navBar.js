@@ -1,7 +1,7 @@
 import './navBar.css';
 import myLogo from './Logo.png';
 import addImage from './plus-square.svg';
-import { itemCard } from '../item/item-ux';
+import {itemCard} from '../item/createItemDialog';
 
 function header(logo) {
   const theLogo = new Image();
@@ -19,7 +19,7 @@ function addNote(parent) {
   addButton.width = 33;
   addButton.height = 33;
   addButton.classList.add('addButton');
-  addButton.addEventListener('click', () => { console.log(taskList); itemCard(parent, taskList); });
+  addButton.addEventListener('click', () => {itemCard(parent, taskList); });
   return addButton;
 }
 

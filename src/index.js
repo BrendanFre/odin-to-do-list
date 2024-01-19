@@ -13,8 +13,4 @@ theList.classList.add('listBody')
 
 Header(content)
 content.appendChild(theList)
-// if(toDoArray.length == 0){itemCard(content, theList); itemToHTML(storageItem, theList)} else{itemToHTML(storageItem, theList)}
-itemCard(theList)
-
-
 theFooter(content)

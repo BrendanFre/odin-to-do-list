@@ -21,5 +21,5 @@ export default function(subject, notes, deadLine) {
     const archiveStatus = () => status = "Archive";
     const deleteStatus = () => status = "deleted";
 
-    return {getStatus, actionStatus, completedStatus, archiveStatus, deleteStatus,itemKey, itemSubject, itemNotes, itemDeadline};
+    return {getStatus, actionStatus, completedStatus, archiveStatus, deleteStatus,};
 }
