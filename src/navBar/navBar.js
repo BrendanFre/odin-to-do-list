@@ -1,6 +1,6 @@
 import './navBar.css';
-import myLogo from './Logo.png';
-import addImage from './plus-square.svg';
+import myLogo from './assets/note.png';
+import addImage from './assets/add.png';
 import {itemCard} from '../item/createItemDialog';
 
 function header(logo) {
