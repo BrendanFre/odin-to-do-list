@@ -1,9 +1,9 @@
-export default function(id, task, notes, deadline) {
+export default (id, task, notes, deadline) => {
   const newItem = {
     taskName: task,
     taskNotes: notes,
     taskDue: deadline,
   };
-  const localStorage = window.localStorage;
+  const { localStorage } = window;
   localStorage.setItem(id, JSON.stringify(newItem));
-}
+};

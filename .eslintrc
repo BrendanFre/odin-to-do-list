@@ -12,7 +12,8 @@
     "globals":{
         "document": "readonly",
         "Image": "readonly",
-        "window": "readonly"
+        "window": "readonly",
+        "localStorage": "readonly"
     }
 
   }

@@ -1,25 +1,42 @@
-import { checkStorage } from "../localStorage/checkStorage";
-import addToStorage from '../localStorage/addToStorage'
+import { checkStorage } from '../localStorage/checkStorage';
+import addToStorage from '../localStorage/addToStorage';
 
-export let taskKey = 0;
+export default (subject, notes, deadLine) => {
+  if (checkStorage) {
+    addToStorage(subject, notes, deadLine);
+  }
+  let status = 'Not Started';
+  let itemSubject = subject;
+  let itemNotes = notes;
+  let itemDeadline = deadLine;
 
-export default function(subject, notes, deadLine) {
-    if(checkStorage) {
-        addToStorage(taskKey, subject, notes, deadLine);
-    }
-    let status = "Not Started";
+  const getStatus = () => status;
+  const getSubject = () => itemSubject;
+  const getNotes = () => itemNotes;
+  const getDeadline = () => itemDeadline;
 
-    let itemSubject = subject;
-    let itemNotes = notes;
-    let itemDeadline = deadLine;
-    let itemKey = taskKey;
-    taskKey++;
-    
-    const getStatus = ()=> status;
-    const actionStatus = ()=> status = "Actioning";
-    const completedStatus = ()=> status = "Completed";
-    const archiveStatus = () => status = "Archive";
-    const deleteStatus = () => status = "deleted";
+  const updateSubject = (newSubject) => { itemSubject = newSubject; };
+  const updateNotes = (newNotes) => { itemNotes = newNotes; };
+  const updateDeadline = (newDeadline) => {
+    itemDeadline = newDeadline;
+  };
 
-    return {getStatus, actionStatus, completedStatus, archiveStatus, deleteStatus,};
-}
+  const actionStatus = () => { status = 'In progress'; };
+  const completedStatus = () => { status = 'Completed'; };
+  const archiveStatus = () => { status = 'Archived'; };
+  const deleteStatus = () => { status = 'Deleted'; };
+
+  return {
+    getStatus,
+    actionStatus,
+    completedStatus,
+    archiveStatus,
+    deleteStatus,
+    getSubject,
+    getNotes,
+    getDeadline,
+    updateSubject,
+    updateNotes,
+    updateDeadline,
+  };
+};
