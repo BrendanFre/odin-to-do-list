@@ -2,8 +2,9 @@ import { checkStorage } from '../localStorage/checkStorage';
 import addToStorage from '../localStorage/addToStorage';
 
 export default (subject, notes, deadLine) => {
+  let taskID = '';
   if (checkStorage) {
-    addToStorage(subject, notes, deadLine);
+    taskID = addToStorage(subject, notes, deadLine);
   }
   let status = 'Not Started';
   let itemSubject = subject;
@@ -38,5 +39,6 @@ export default (subject, notes, deadLine) => {
     updateSubject,
     updateNotes,
     updateDeadline,
+    taskID,
   };
 };
