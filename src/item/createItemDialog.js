@@ -61,6 +61,5 @@ export default (parent) => {
     createItem(todoTitleValue, todoNotesValue, todoDueValue);
     postButton.parentElement.remove();
   });
-
   parent.appendChild(dialogBox);
 };

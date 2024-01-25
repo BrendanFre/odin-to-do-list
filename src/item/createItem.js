@@ -1,5 +1,6 @@
 import { checkStorage } from '../localStorage/checkStorage';
 import addToStorage from '../localStorage/addToStorage';
+import refreshUI from '../localStorage/refreshUI';
 
 export default (subject, notes, deadLine) => {
   let taskID = '';
@@ -26,6 +27,10 @@ export default (subject, notes, deadLine) => {
   const completedStatus = () => { status = 'Completed'; };
   const archiveStatus = () => { status = 'Archived'; };
   const deleteStatus = () => { status = 'Deleted'; };
+
+  const theList = document.querySelector('.listBody');
+
+  refreshUI(theList);
 
   return {
     getStatus,
