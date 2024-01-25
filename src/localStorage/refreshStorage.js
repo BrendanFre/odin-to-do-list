@@ -6,10 +6,10 @@ export default () => {
     keyArray.push(element);
   });
   keyArray.forEach((key) => {
-    contentsArray.push(localStorage[key]);
+    const newObject = JSON.parse(localStorage[key]);
+    newObject.id = key;
+    contentsArray.push(newObject);
   });
-  contentsArray.forEach((element) => {
-    console.log(element);
-  });
+  console.log(contentsArray);
   return contentsArray;
 };

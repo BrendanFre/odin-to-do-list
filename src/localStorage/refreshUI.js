@@ -2,14 +2,14 @@ import refreshStorage from './refreshStorage';
 import singleItemUx from '../item/single-item-ux/single-item-ux';
 
 export default (parent) => {
+  parent.textContent = '';
   const taskListArray = refreshStorage();
   taskListArray.forEach((element) => {
-    const newItem = JSON.parse(element);
-    console.log(newItem);
     singleItemUx(
-      newItem.taskName,
-      newItem.taskNotes,
-      newItem.taskDue,
+      element.taskName,
+      element.taskNotes,
+      element.taskDue,
+      element.id,
       parent,
     );
   });

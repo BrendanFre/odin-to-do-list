@@ -1,6 +1,7 @@
 import './single-item-ux.css';
 import closeImage from '../assets/close.png';
 import notesImage from '../assets/note.png';
+import deleteStorageItem from '../../localStorage/deleteStorageItem';
 
 const topBar = (subject, parent) => {
   const topContainer = document.createElement('div');
@@ -16,6 +17,13 @@ const topBar = (subject, parent) => {
   topContainer.appendChild(deleteIcon);
   topContainer.classList.add('topBar');
 
+  deleteIcon.addEventListener(
+    'click',
+    () => {
+      deleteStorageItem(parent.id);
+    },
+  );
+
   parent.appendChild(topContainer);
 };
 
@@ -27,9 +35,11 @@ const contentsBar = (contents, parent) => {
   parent.appendChild(contentContainer);
 };
 
-export default (subject, contents, deadline, parent) => {
+export default (subject, contents, deadline, id, parent) => {
   const mainContainer = document.createElement('div');
   mainContainer.classList.add('mainContainer');
+  mainContainer.id = id;
+
   topBar(subject, mainContainer);
   contentsBar(contents, mainContainer);
   parent.appendChild(mainContainer);
