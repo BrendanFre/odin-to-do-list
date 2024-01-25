@@ -7,32 +7,56 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    border: 2px solid #0c4a6e;
+    background-color: #0891b2;
+    margin: 2vh auto;
+    border-radius: 20px;
+    padding: 0;
 }
 
 .newItemBox>input[type=text]{
     border: none;
+    background-color: #67e8f9;
+    font-size: 20px;
+    text-align: center;
 }
 
 .newItemBox>input[type=text]:focus{
     border: none;
     outline: none;
+    background-color: #67e8f9;
 }
 
 .newItemBox>textarea{
     border: none;
     height: 90vh;
+    padding: 0 5vw;
+    background-color: #a5f3fc;
 }
 
 .newItemBox>textarea:focus{
     border: none;
     outline: none;
+    background-color: #a5f3fc;
+    padding: 0 5vw;
 }
 
 .newItemBox>button{
-    width: 95%;
-    height: 20px;
+    width: 100%;
+    height: 40px;
     border: none;
-    background-color: aliceblue;
+    background-color: #0891b2;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #ecfeff;
+    padding: 10px;
+}
+
+.newItemBox>input[type=date]{
+    border: none;
+    outline: none;
+    background-color: #67e8f9;
+    padding: 1vh 5vw;
 }
 
 /* Task List */
@@ -62,4 +86,27 @@
 .deleteButton{
     background-color: rgba(0 0 0 0);
     border: none;
+    width: 100%;
+}
+
+
+.dialogTopBar{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    text-align:center;
+    background-color: #0891b2;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 1vh 2vw;
+}
+
+.dialogTopBar>img{
+    width: 32px;
+    color: white;
+}
+
+.dialogTitle{
+    margin: auto;
+    color: #ecfeff;
 }
